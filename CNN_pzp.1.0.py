@@ -77,8 +77,8 @@ h_conv1 = tf.nn.relu(conv2d(x_image, W_conv1) + b_conv1) # output size 30x1025x1
 h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')   # output size 15x205x16
 h_pool1 = tf.contrib.layers.layer_norm(h_pool1)
 ## conv2 layer ##
-W_conv2 = weight_variable([5,5, 2, 8]) # patch 5x5, in size 16, out size 32
-b_conv2 = bias_variable([8])
+W_conv2 = weight_variable([5,5, 2, 4]) # patch 5x5, in size 16, out size 32
+b_conv2 = bias_variable([4])
 h_conv2 = tf.nn.relu(conv2d(h_pool1, W_conv2) + b_conv2) # output size 15x205x32
 h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1,3,2,1], strides=[1,3,2,1], padding='SAME')# output size 5x41x12
 h_pool2 = tf.contrib.layers.layer_norm(h_pool2)
