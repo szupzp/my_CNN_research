@@ -15,7 +15,7 @@ import numpy as np
 import tensorflow as tf
 from sklearn.decomposition import PCA 
 from sklearn import preprocessing
-#matplotlib inline
+##matplotlib inline
 try:
     import cPickle as pickle  # Improve speed
 except ValueError:
